@@ -28,7 +28,7 @@ public class PersonModel {
 	private String name;
 	
 	@NotBlank
-	@Email(message = "Email inválido!")
+	@Email(message = "Invalid Email!")
 	private String email;
 	
 	@NotBlank
