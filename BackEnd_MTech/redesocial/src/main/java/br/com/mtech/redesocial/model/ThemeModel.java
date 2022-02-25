@@ -23,7 +23,7 @@ public class ThemeModel {
 	private long id;
 	
 	@NotBlank
-	@Size(min = 10, max = 100)	//Coloca os tema (Vaga, Material de apoio, Cursos...)
+	@Size(min = 4, max = 100)	//Coloca os tema (Vaga, Material de apoio, Cursos...)
 	private String description; //Ao puxar no post, coloca qual o tema que se refere o post...
 	
 	@OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
