@@ -16,29 +16,43 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_person")
-public class PersonModel {
-
+@Table (name = "tb_user")
+public class UserModel {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@NotBlank
-	@Size(min = 4, max = 255) // Fazer teste para ver o tamanho minimo.
+	@Size (min = 2, message = "O atributo é obrigatório!")
 	private String name;
 	
-	@NotBlank
-	@Email(message = "Invalid Email!")
+	@NotBlank (message = "O atributo é obrigatório!")
+	@Email (message = "Esse não é um email válido!")
 	private String email;
 	
 	@NotBlank
-	@Size(min = 6)
+	@Size (min = 8, message = "A senha deve conter o minímo 8 caracteres!")
 	private String password;
 	
-	@OneToMany(mappedBy = "person", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("person")
-	private List<PostModel> post;
+	private String photo;
+	
+	@OneToMany (mappedBy = "user", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties ("user")
+	private List<PostModel>post;
+	
+	public UserModel (long id, String name, String email, String password, String photo) {
+		
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.photo = photo;
+		
+	}
 
+	public UserModel () {}
+	
 	public long getId() {
 		return id;
 	}
@@ -69,6 +83,14 @@ public class PersonModel {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	public List<PostModel> getPost() {
