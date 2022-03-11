@@ -29,6 +29,15 @@ public class ThemeModel {
 	@OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("theme")
 	private List<PostModel> post;
+	
+	public ThemeModel(long id, String description) {
+		
+		this.id = id;
+		this.description = description;
+		
+	}
+	
+	public ThemeModel() {}
 
 	public long getId() {
 		return id;

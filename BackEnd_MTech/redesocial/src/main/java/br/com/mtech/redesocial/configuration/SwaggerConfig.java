@@ -18,7 +18,7 @@ public class SwaggerConfig {
 	public OpenAPI springMtechOpenAPI() {
 
 		return new OpenAPI()
-				.info(new Info().title("MTech").description("https://github.com/Mtech02").version("V1.0.0")
+				.info(new Info().title("MTech").description("https://github.com/Mtech02").version("V1.0.1")
 						.license(new License().name("generation.org.br").url("http://springdoc.org"))
 						.contact(new Contact().name("MTech").url("https://github.com/Mtech02/BackEnd_MTech")
 								.email("techm4267@gmail.com")))
