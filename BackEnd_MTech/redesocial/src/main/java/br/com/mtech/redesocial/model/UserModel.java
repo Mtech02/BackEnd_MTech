@@ -15,6 +15,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table (name = "tb_user")
 public class UserModel {
@@ -27,6 +29,7 @@ public class UserModel {
 	@Size (min = 2, message = "O atributo é obrigatório!")
 	private String name;
 	
+	@Schema(example = "email@dominio.com")
 	@NotBlank (message = "O atributo é obrigatório!")
 	@Email (message = "Esse não é um email válido!")
 	private String email;
