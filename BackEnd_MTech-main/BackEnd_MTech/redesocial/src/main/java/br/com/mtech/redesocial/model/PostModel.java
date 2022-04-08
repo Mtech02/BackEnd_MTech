@@ -29,7 +29,9 @@ public class PostModel {
 	
 	@NotBlank
 	@Size(min = 10, max = 1000)
-	private String text;
+	private String description;
+	
+	private String photo;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
@@ -58,12 +60,20 @@ public class PostModel {
 		this.title = title;
 	}
 
-	public String getText() {
-		return text;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setDescription(String text) {
+		this.description = text;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	public Date getDate() {

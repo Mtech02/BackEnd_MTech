@@ -26,7 +26,7 @@ public class ThemeModel {
 	@Size(min = 4, max = 100)	//Coloca os tema (Vaga, Material de apoio, Cursos...)
 	private String description; //Ao puxar no post, coloca qual o tema que se refere o post...
 	
-	@OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "theme", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("theme")
 	private List<PostModel> post;
 	

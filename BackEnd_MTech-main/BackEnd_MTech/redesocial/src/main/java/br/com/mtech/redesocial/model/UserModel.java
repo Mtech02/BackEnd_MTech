@@ -40,9 +40,11 @@ public class UserModel {
 	
 	private String photo;
 	
+	private String description;
+	
 	private String type;
 	
-	@OneToMany (mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany (mappedBy = "user", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties ("user")
 	private List<PostModel>post;
 	
@@ -101,6 +103,14 @@ public class UserModel {
 
 	public List<PostModel> getPost() {
 		return post;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public void setPost(List<PostModel> post) {

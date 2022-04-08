@@ -9,7 +9,7 @@ public class UserLogin {
 	private String photo;
 	private String token;
 	private String type;
-	
+	private String description;
 		
 	public long getId() {
 		return id;
@@ -53,6 +53,11 @@ public class UserLogin {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	
 }
