@@ -63,6 +63,7 @@ public class UserService {
 				userLogin.get().setName(userModel.get().getName());
 				userLogin.get().setPhoto(userModel.get().getPhoto());
 				userLogin.get().setDescription(userModel.get().getDescription());
+				userLogin.get().setType(userModel.get().getType());
 				userLogin.get().setToken(generateBasicToken(userModel.get().getEmail(), userLogin.get().getPassword()));
 				userLogin.get().setPassword(userModel.get().getPassword());
 
